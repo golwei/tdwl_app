@@ -33,7 +33,6 @@ function request(url, data = {}, method = "GET") {
       },
       success: function (res) {
         console.log("success");
-
         if (res.statusCode == 200) {
 
           if (res.data.errno == 401) {
@@ -50,7 +49,7 @@ function request(url, data = {}, method = "GET") {
                   //存储用户信息
                   wx.setStorageSync('userInfo', res.data.userInfo);
                   wx.setStorageSync('token', res.data.token);
-                  
+
                   resolve(res);
                 } else {
                   reject(res);
